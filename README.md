@@ -1,6 +1,4 @@
-# python-challenge-1
-
-**Design an interactive ordering system from a food truck menu**  
+# Design an interactive ordering system from a food truck menu
 
 **Order System**  
 ***1*** Create an empty list. This list will later store a customer's order in dictionary format, as follows:  
