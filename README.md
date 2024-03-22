@@ -4,18 +4,18 @@
 
 **Order System**  
 ***1*** Create an empty list. This list will later store a customer's order in dictionary format, as follows:  
-[
-  {
-    "Item name": "string",
-    "Price": float,
-    "Quantity": int
-  },
-  {
-    "Item name": "string",
-    "Price": float,
-    "Quantity": int
-  },
-]
+[  
+  {  
+    "Item name": "string",  
+    "Price": float,  
+    "Quantity": int  
+  },  
+  {  
+    "Item name": "string",  
+    "Price": float,  
+    "Quantity": int  
+  },  
+]  
 
 ***2*** After the sub-menu is printed, prompt the customer to enter their selection from the menu , saving it as a variable ***menu_selection***  
 
@@ -33,9 +33,9 @@ Append the customer's order to the order list in dictionary format with the foll
 
 ***5*** Inside the continuous while loop that prompts the customer if they would like to keep ordering, write a match:case statement that checks for y or n (upper or lowercase), and includes a default option if neither letter is entered by the customer. The following actions should be performed for each case:
 
-y: Set the place_order variable to True and break from the continuous while loop.  
+y: Set the ***place_order*** variable to ***True*** and break from the continuous while loop.  
 
-n: Set the place_order variable to False, print "Thank you for your order", and break from the continuous while loop.  
+n: Set the ***place_order*** variable to ***False***, print "Thank you for your order", and break from the continuous while loop.  
 
 Default: Tell the customer to try again because they didn't type a valid input.  
 
