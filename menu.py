@@ -74,14 +74,21 @@ def printReciept():
         print(" ")
         print ('-' * len(item_name_text) + "|" + '-' * len(price_text) + "|" + '-' * len(quantity_text))
         total = 0
+        
 
         for item in order_details:
+            num_of_spaces = 2
             print(" ")
             item_name = item["Item name"]
             price = item["Price"]
             quantity = item["Quantity"]
             total += price*quantity
-            print(item_name + " "*(len(item_name_text)-len(item_name)) + "|" + "  $" + str(price) + " "*2 +  "|" + " "*2 + str(quantity))
+            if len(str(price)) > 4:
+                num_of_spaces = 1
+            else:
+                num_of_spaces = 2
+    
+            print(item_name + " "*(len(item_name_text)-len(item_name)) + "|" + "  $" + str(price) + " "*num_of_spaces +  "|" + " "*2 + str(quantity))
         total = float("{:.2f}".format(total))
         print(" ")
         print ('-' * len(item_name_text) + "|" + '-' * len(price_text) + "|" + '-' * len(quantity_text))
@@ -96,53 +103,36 @@ def printReciept():
 # method to add selected item to customer order 
 def addItemToTheOrder():
     menu_selection = input("Please make your selection ")
-    quantity = input("How many? In case of invalid input system will add 1 item by default ")
-   
-    if quantity.isdigit() :
-        if (int(quantity)<0):
-            quantity = int(quantity) *-1
-        else:
-            quantity = int(quantity)
-    else:
-        quantity = 1
-
     if(menu_selection.isdigit()):
         menu_selection = int(menu_selection)
         #check if user's input is in menu items
-        if menu_selection in menu_items.keys():
-            # add selection to the order_details list
-            print(menu_selection)
-            print("menu category name::::::::::")
-            print(menu_category_name)
-            print("list of iyems in submenu::::::::::::::::::::")
-            print(menu[menu_category_name].keys())
-            #print(f"user selected {list(menu[menu_category_name].keys())[menu_selection-1]}")
-            print(f"user selected {list(menu[menu_category_name].keys())}")
+        if menu_selection < item_counter:
             item_name_t = ""
             price_t = 0
             item_counter_t = 0
             for key, value in menu[menu_category_name].items():
                 if type(value) is dict:
-                    print(f"item counter {item_counter} user choice :{menu_selection}")
-                    #TODO fix mash part
                     for key2, value2 in value.items():
                         item_counter_t += 1
-                        print(f"item counter in loop {item_counter_t} user choice in loop :{menu_selection}")
                         if item_counter_t == menu_selection:
                             item_name_t = key2
                             price_t = value2
                             break
                 else:
-                    print(f"item counter {item_counter} user choice :{menu_selection}")
                     item_counter_t += 1
                     if item_counter_t == menu_selection:
                         item_name_t = key
                         price_t = value
                         break
-
-            print(item_name_t)
-            print(price_t)
-            print(quantity)
+           # take user quantity input
+            quantity = input("How many? In case of invalid input system will add 1 item by default ")
+            if quantity.isdigit() :
+                if (int(quantity) <0 ):
+                    quantity = int(quantity) *-1
+                else:
+                    quantity = int(quantity)
+            else:
+                 quantity = 1
             # check if order_list contains the item increase quantity, otherwise add it to the order_list
             if len(order_details) < 1:
                 order_details.append(dict({"Item name" : item_name_t, "Price" : price_t, "Quantity" : quantity}))
@@ -150,15 +140,12 @@ def addItemToTheOrder():
                 for item_in_orders in order_details:
                     if (item_name_t in item_in_orders.values()):
                         if item_name_t == item_in_orders["Item name"] :
-                            print(f"item name is in orders {item_name_t}")
                             item_in_orders["Quantity"] += quantity
                     else :
-                        print(f"item name not in  orders!!!!! {item_name_t} quantity {quantity}")
                         order_details.append(dict({"Item name" : item_name_t, "Price" : price_t, "Quantity" : quantity}))
                         break
         else:
             print("Select something from the menu")
-        print(f"you have selected {order_details}")
     else :
         print("Please select item number ")
 
@@ -215,5 +202,3 @@ while True:
             print(f"{menu_category} was not a menu option.")
     else:
         print("You didn't select a number.")
-
-
