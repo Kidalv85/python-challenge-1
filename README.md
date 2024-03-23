@@ -59,16 +59,16 @@ Fried banana              | $4.49  | 3
 
 
 ***Confirmation to exit submenu Snacks**  
-![](confirmation to exit submenu1.png)  
+![](confirmation1.png)  
 
 ***Confirmation to exit submenu Meals**  
-![](confirmation to exit submenu2.png)  
+![](confirmation2.png)  
 
 ***Confirmation to exit submenu Drinks**  
-![](confirmation to exit submenu3.png)  
+![](confirmation3.png)  
 
 ***confirmation to exit submenu Deserts**  
-![](confirmation to exit submenu4.png)  
+![](confirmation4.png)  
 
 ***OUTPUT**  
 ![](output.png)  
