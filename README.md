@@ -58,16 +58,16 @@ Fried banana              | $4.49  | 3
 ***11*** Upon exiting the for loop, use list comprehension and sum() to calculate the total price of the order and display it to the customer. Make sure you multiply the price by the quantity in your list comprehension.  
 
 
-***Confirmation to exit submenu Snacks**  
+**Confirmation to exit submenu Snacks**  
 ![](confirmation1.png)  
 
-***Confirmation to exit submenu Meals**  
+**Confirmation to exit submenu Meals**  
 ![](confirmation2.png)  
 
-***Confirmation to exit submenu Drinks**  
+**Confirmation to exit submenu Drinks**  
 ![](confirmation3.png)  
 
-***confirmation to exit submenu Deserts**  
+**Confirmation to exit submenu Deserts**  
 ![](confirmation4.png)  
 
 ***OUTPUT**  
