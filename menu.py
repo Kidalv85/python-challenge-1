@@ -80,10 +80,12 @@ def printReciept():
             quantity = item["Quantity"]
             total += price*quantity
             print(item_name + " "*(len(item_name_text)-len(item_name)) + "|" + "  $" + str(price) + " "*2 +  "|" + " "*2 + str(quantity))
+        total = float("{:.2f}".format(total))
         print(" ")
         print ('-' * len(item_name_text) + "|" + '-' * len(price_text) + "|" + '-' * len(quantity_text))
+        print(" ")
         print(f"Total ${total}")
-        print()
+        print(" ")
         
     else :
         print("We are sorry, you did not like our menu...")
