@@ -68,14 +68,12 @@ def printReciept():
         item_name_text = "Item name          "
         price_text = "  Price  "
         quantity_text = "  Quantity  "
-        print("Here is your order summery")
+        print("Here is your order summary")
         print(" ")
         print(f"{item_name_text}|{price_text}|{quantity_text}")
         print(" ")
         print ('-' * len(item_name_text) + "|" + '-' * len(price_text) + "|" + '-' * len(quantity_text))
         total = 0
-        
-
         for item in order_details:
             num_of_spaces = 2
             print(" ")
@@ -95,7 +93,6 @@ def printReciept():
         print(" ")
         print(f"Total ${total}")
         print(" ")
-        
     else :
         print("We are sorry, you did not like our menu...")
     print(" ")
