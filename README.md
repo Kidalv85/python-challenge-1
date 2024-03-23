@@ -55,4 +55,7 @@ Fried banana              | $4.49  | 3
 
 ***10*** Print the line for the receipt using the format in Step 8.  
 
-***11*** Upon exiting the for loop, use list comprehension and sum() to calculate the total price of the order and display it to the customer. Make sure you multiply the price by the quantity in your list comprehension.
+***11*** Upon exiting the for loop, use list comprehension and sum() to calculate the total price of the order and display it to the customer. Make sure you multiply the price by the quantity in your list comprehension.  
+
+***OUTPUT**  
+![](output.png)
